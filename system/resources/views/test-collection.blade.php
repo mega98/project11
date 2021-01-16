@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -8,13 +8,13 @@
     <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
    
-    <title>Hello, world!</title>
+    <title>Pasline</title>
   </head>
   <body>
     <div class="container">
     	<div class="row">
     		@foreach($list as $item)
-    			<div class="co-md-4 mt-5">
+    			<div class="co-md-4 mt-5 col-md-6">
     				<div class="card">
     					<div class="card-header">
     						{{$item->nama}}
@@ -28,7 +28,7 @@
     		<div class="row">
     			<div class="col-md-12">
     				<div class="float-right">
-    					{{$list->links()}}
+    					{{$list->links('')}}
     				</div>
     			</div>
     		</div>

@@ -31,7 +31,7 @@ Route::get('contact', [HomeController::class, 'showcontact']);
 Route::get('dashboard', [HomeController::class, 'showdashboard']);
 Route::get('kategori', [HomeController::class, 'showkategori']);
 
-Route::get('test/{produk}/{hargaMin?}/{hargaMax?}', [HomeController::class, 'test']);
+Route::get('test/{produk}/{hargaMin?}/{hargaMax?}', [ProdukController::class, 'test']);
 
 Route::prefix('admin')->middleware('auth')->group(function(){
 
@@ -61,4 +61,4 @@ Route::post('login', [AuthController::class, 'loginProcess'])->name('login');
 Route::get('logout', [AuthController::class, 'logout']);
 Route::get('register', [AuthController::class, 'showRegister']);
 
-Route:: get('test-collection', [HomeController::class, 'testCollection']);
+Route:: get('test-collection', [ProdukController::class, 'testCollection']);

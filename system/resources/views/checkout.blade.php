@@ -61,7 +61,7 @@
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="home" class="nav-link">Home</a></li>
 	          <li class="nav-item dropdown">
-	          <li class="nav-item active"><a href="produk1" class="nav-link">Shop</a></li>
+	          <li class="nav-item active"><a href="produk1" class="nav-link">Produk</a></li>
 	          <li class="nav-item dropdown">
 	          <li class="nav-item active"><a href="checkout" class="nav-link">Checkout</a></li>
 	          <li class="nav-item dropdown">

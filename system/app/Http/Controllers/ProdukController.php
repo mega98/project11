@@ -1,6 +1,7 @@
 <?php 
 
 namespace App\Http\Controllers;
+
 use App\Models\Produk;
 
 class ProdukController extends Controller 
@@ -99,5 +100,74 @@ class ProdukController extends Controller
 		$data['stok'] = request('stok');
 
 		return view('produk.index', $data);
+
+	}	
+
+
+	function test($produk, $hargaMin = 0, $hargaMax = 0){
+		if($produk == 'payung'){
+			echo "Tampilkan Produk Payung";
+		}elseif($produk == 'sepeda'){
+			echo "Produk Sepeda";
+		}
+		echo "<br>";
+		echo "Harga Min adalah $hargaMin <br>";
+		echo "Harga Max adalah $hargaMax <br>";
+
+	}
+
+		public function testCollection(){
+
+		$list_produk = ['Sawi', 'Wortel', 'Bayam', 'Buncis'];
+		$collection = collect($list_produk);
+		$list_produk = Produk::all();
+
+		// Sorting
+		//sort By Harga Terendah
+		//dd($list_produk->sortBy('harga'));
+		//sort By Harga Tertinggi
+		//dd($list_produk->sortByDesc('harga'));
+
+
+		//map
+		// foreach($list_produk as $item){
+		//	echo "$item->nama<br>";
+		// }
+
+		// $list_produk->each(function($item){
+		//	echo "$item->nama<br>";
+		// });
+
+		//dd($list_bike, $collection, $list_produk);
+
+		// Filter
+
+		// $filtered = $list_produk->filter(function($item){
+		//	return $item->harga > 50000;
+		// });
+		// dd($filtered);
+
+		//Harga Teringgi
+		// $sum = $list_produk->sum('harga');
+		// dd($sum);
+
+		// Harga Terendah
+		// $sum = $list_produk->min('harga');
+		// dd($sum);
+
+		// Tinggi
+		// $sum = $list_produk->max('harga');
+		// dd($sum);
+
+		// rata rata
+		//$sum = $list_produk->average('stok');
+		//dd($sum);
+
+
+		//pagination
+		$data['list'] = Produk::simplePaginate(3); /*hanya next dan previos*/
+		$data['list'] = Produk::paginate(3); /*ada nomor halaman*/
+		return view('test-collection', $data);
+
 	}
 }
